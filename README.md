@@ -1,10 +1,10 @@
 # <p align="center"> Just Space </p>
 ## Contributing
-  Lib
-   - model (for data structures and models)
-   - pages (for different pages of app)
-       - features (for those features which are not pages but contribute to other page/s)
-   - utils (for APIs, helpers, constants etc)
+  /Lib
+   -- model (for data structures and models)
+   -- pages (for different pages of app)
+       -- features (for those features which are not pages but contribute to other page/s)
+   -- utils (for APIs, helpers, constants etc)
 
 ## Connect with me
   <a href="https://github.com/jagadish-pattanaik">
