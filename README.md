@@ -3,7 +3,7 @@
   /Lib<br>
    - model (for data structures and models)<br>
    - pages (for different pages of app)<br>
-       - features (for those features which are not pages but contribute to other page/s)<br>
+       - 1 folder for each page (this folder contains all files related to that page including its features)<br>
    - utils (for APIs, helpers, constants etc)<br>
 
 ## Connect with me

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:just_space/model/data.dart';
-import '../utils/constants.dart';
+import '../../utils/constants.dart';
 
 class DetailPage extends StatelessWidget {
   final PlanetInfo planetInfo;

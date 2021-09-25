@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
+import 'pages/planets/planets_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
