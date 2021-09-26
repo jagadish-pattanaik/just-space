@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -31,7 +30,7 @@ class TrackIISState extends State<TrackIIS> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Humans In Space'),
+        title: Text('Track ISS'),
       ),
       body: Center(
         child: Text(data),

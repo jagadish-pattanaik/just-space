@@ -31,9 +31,10 @@ class _PlanetPageState extends State<PlanetPage> {
               Padding(
                 padding: const EdgeInsets.all(32.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'Explore',
+                      'Solar System',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 44,
@@ -43,7 +44,7 @@ class _PlanetPageState extends State<PlanetPage> {
                       textAlign: TextAlign.left,
                     ),
                     Text(
-                      'Solar System',
+                      'All planets',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 24,

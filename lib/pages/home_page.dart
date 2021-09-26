@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:just_space/pages/calculator/calculator_page.dart';
 import 'package:just_space/pages/isro/isro_page.dart';
 import 'package:just_space/pages/iss/track_iss.dart';
+import 'package:just_space/pages/news/news_details.dart';
 import 'package:just_space/pages/planets/planets_page.dart';
 import 'package:just_space/utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
-import 'humansInSpace.dart';
+import 'astronauts/humansInSpace.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -40,10 +40,74 @@ class _HomePageState extends State<HomePage> {
       print(i['title']);
       setState(() {
         newsList.add(
-          ListTile(
-            title: Text(i['title']),
-            subtitle: Text(i['details']),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NewsDetails(title: i['title'], desc: i['details'],))
+              );
+            },
+            child: Stack(
+                children: <Widget>[
+                  Column(
+                      children: <Widget>[
+                        Card(
+            elevation: 8,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(32),
+            ),
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment:
+                CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(i['title'],
+                    style: TextStyle(
+                      fontFamily: 'Avenir',
+                      fontSize: 40,
+                      color: const Color(0xff47455f),
+                      fontWeight: FontWeight.w900,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(i['details'],
+                    style: TextStyle(
+                      fontFamily: 'Avenir',
+                      fontSize: 20,
+                      color: primaryTextColor,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    textAlign: TextAlign.left,
+                    maxLines: 4,
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        'Know more',
+                        style: TextStyle(
+                          fontFamily: 'Avenir',
+                          fontSize: 18,
+                          color: secondaryTextColor,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                      Icon(
+                        Icons.arrow_forward,
+                        color: secondaryTextColor,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
+        ]),
+        ]),
+        ),
         );
       });
     }

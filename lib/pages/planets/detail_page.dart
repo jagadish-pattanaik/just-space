@@ -48,7 +48,7 @@ class DetailPage extends StatelessWidget {
                         SizedBox(height: 32),
                         Text(
                           planetInfo.description ?? '',
-                          maxLines: 5,
+                          maxLines: 100000000000000,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontFamily: 'Avenir',
