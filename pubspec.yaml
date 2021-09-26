@@ -22,6 +22,7 @@ environment:
 
 dependencies:
   flutter_swiper: ^1.1.6
+  font_awesome_flutter: ^9.1.0
   flutter:
     sdk: flutter
 

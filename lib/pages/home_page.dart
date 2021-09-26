@@ -4,6 +4,7 @@ import 'package:just_space/pages/calculator/calculator_page.dart';
 import 'package:just_space/pages/isro/isro_page.dart';
 import 'package:just_space/pages/planets/planets_page.dart';
 import 'package:just_space/utils/constants.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -41,18 +42,14 @@ class _HomePageState extends State<HomePage> {
         label: 'News',
       ),
       BottomNavigationBarItem(
-        icon: Icon(CupertinoIcons.rocket),
+        icon: Icon(CupertinoIcons.rocket_fill),
         activeIcon: Icon(CupertinoIcons.rocket_fill),
         label: 'Explore',
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.location_on_outlined),
-        activeIcon: Icon(Icons.location_on),
-        label: 'Locations',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(CupertinoIcons.sparkles),
-        label: 'Photos',
+        icon: FaIcon(FontAwesomeIcons.userAstronaut),
+        activeIcon: FaIcon(FontAwesomeIcons.userAstronaut),
+        label: 'ISS',
       ),
     ];
   }
@@ -82,8 +79,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   news(),
                   explore(),
-                  location(),
-                  photos(),
+                  iss(),
                 ],
               )),
         ),
@@ -101,6 +97,8 @@ class _HomePageState extends State<HomePage> {
           type: BottomNavigationBarType.fixed,
     unselectedItemColor: const Color(0x7cdbf1ff),
     backgroundColor: Colors.transparent,
+    selectedFontSize: 12,
+    unselectedFontSize: 12,
     selectedItemColor: Colors.white,
     currentIndex: bottomSelectedIndex,
     onTap: (index) {
@@ -220,7 +218,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           color: Colors.white,
                           child: Padding(
-                            padding: const EdgeInsets.all(32.0),
+                            padding: const EdgeInsets.all(20.0),
                             child: Column(
                               crossAxisAlignment:
                               CrossAxisAlignment.start,
@@ -228,7 +226,7 @@ class _HomePageState extends State<HomePage> {
                                 Text("Solar System",
                                   style: TextStyle(
                                     fontFamily: 'Avenir',
-                                    fontSize: 44,
+                                    fontSize: 40,
                                     color: const Color(0xff47455f),
                                     fontWeight: FontWeight.w900,
                                   ),
@@ -238,13 +236,13 @@ class _HomePageState extends State<HomePage> {
                                   'All planets in our solar system',
                                   style: TextStyle(
                                     fontFamily: 'Avenir',
-                                    fontSize: 23,
+                                    fontSize: 20,
                                     color: primaryTextColor,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   textAlign: TextAlign.left,
                                 ),
-                                SizedBox(height: 25),
+                                SizedBox(height: 20),
                                 Row(
                                   children: <Widget>[
                                     Text(
@@ -290,7 +288,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 color: Colors.white,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(32.0),
+                                  padding: const EdgeInsets.all(20.0),
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -298,7 +296,7 @@ class _HomePageState extends State<HomePage> {
                                       Text("Weight Calculator",
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 44,
+                                          fontSize: 40,
                                           color: const Color(0xff47455f),
                                           fontWeight: FontWeight.w900,
                                         ),
@@ -308,13 +306,13 @@ class _HomePageState extends State<HomePage> {
                                         "What's your weight on other planets?",
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 23,
+                                          fontSize: 20,
                                           color: primaryTextColor,
                                           fontWeight: FontWeight.w500,
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
-                                      SizedBox(height: 25),
+                                      SizedBox(height: 20),
                                       Row(
                                         children: <Widget>[
                                           Text(
@@ -360,7 +358,77 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 color: Colors.white,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(32.0),
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text("Upcoming Launches",
+                                        style: TextStyle(
+                                          fontFamily: 'Avenir',
+                                          fontSize: 40,
+                                          color: const Color(0xff47455f),
+                                          fontWeight: FontWeight.w900,
+                                        ),
+                                        textAlign: TextAlign.left,
+                                      ),
+                                      Text(
+                                        'When next rocket is getting launched?',
+                                        style: TextStyle(
+                                          fontFamily: 'Avenir',
+                                          fontSize: 20,
+                                          color: primaryTextColor,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                        textAlign: TextAlign.left,
+                                      ),
+                                      SizedBox(height: 20),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            'Know more',
+                                            style: TextStyle(
+                                              fontFamily: 'Avenir',
+                                              fontSize: 18,
+                                              color: secondaryTextColor,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            textAlign: TextAlign.left,
+                                          ),
+                                          Icon(
+                                            Icons.arrow_forward,
+                                            color: secondaryTextColor,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => IsroPage())
+                        );
+                      },
+                      child: Stack(
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Card(
+                                elevation: 8,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(32),
+                                ),
+                                color: Colors.white,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20.0),
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -368,7 +436,7 @@ class _HomePageState extends State<HomePage> {
                                       Text("ISRO",
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 44,
+                                          fontSize: 40,
                                           color: const Color(0xff47455f),
                                           fontWeight: FontWeight.w900,
                                         ),
@@ -378,83 +446,13 @@ class _HomePageState extends State<HomePage> {
                                         'Know about ISRO',
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 23,
+                                          fontSize: 20,
                                           color: primaryTextColor,
                                           fontWeight: FontWeight.w500,
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
-                                      SizedBox(height: 25),
-                                      Row(
-                                        children: <Widget>[
-                                          Text(
-                                            'Know more',
-                                            style: TextStyle(
-                                              fontFamily: 'Avenir',
-                                              fontSize: 18,
-                                              color: secondaryTextColor,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            textAlign: TextAlign.left,
-                                          ),
-                                          Icon(
-                                            Icons.arrow_forward,
-                                            color: secondaryTextColor,
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => IsroPage())
-                        );
-                      },
-                      child: Stack(
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Card(
-                                elevation: 8,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32),
-                                ),
-                                color: Colors.white,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(32.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text("SpaceX Launch",
-                                        style: TextStyle(
-                                          fontFamily: 'Avenir',
-                                          fontSize: 44,
-                                          color: const Color(0xff47455f),
-                                          fontWeight: FontWeight.w900,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      Text(
-                                        'When Elon is launching his next rocket?',
-                                        style: TextStyle(
-                                          fontFamily: 'Avenir',
-                                          fontSize: 23,
-                                          color: primaryTextColor,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      SizedBox(height: 25),
+                                      SizedBox(height: 20),
                                       Row(
                                         children: <Widget>[
                                           Text(
@@ -493,7 +491,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget location() {
+  Widget iss() {
     return Scaffold(
       backgroundColor: gradientEndColor,
       body: Container(
@@ -513,7 +511,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: <Widget>[
                       Text(
-                        'Locations',
+                        'ISS',
                         style: TextStyle(
                           fontFamily: 'Avenir',
                           fontSize: 44,
@@ -547,7 +545,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   color: Colors.white,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(32.0),
+                                    padding: const EdgeInsets.all(20.0),
                                     child: Column(
                                       crossAxisAlignment:
                                       CrossAxisAlignment.start,
@@ -555,7 +553,7 @@ class _HomePageState extends State<HomePage> {
                                         Text("Track ISS",
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
-                                            fontSize: 44,
+                                            fontSize: 40,
                                             color: const Color(0xff47455f),
                                             fontWeight: FontWeight.w900,
                                           ),
@@ -571,7 +569,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
-                                        SizedBox(height: 25),
+                                        SizedBox(height: 20),
                                         Row(
                                           children: <Widget>[
                                             Text(
@@ -617,7 +615,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   color: Colors.white,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(32.0),
+                                    padding: const EdgeInsets.all(20.0),
                                     child: Column(
                                       crossAxisAlignment:
                                       CrossAxisAlignment.start,
@@ -625,7 +623,7 @@ class _HomePageState extends State<HomePage> {
                                         Text("ISS Prediction",
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
-                                            fontSize: 44,
+                                            fontSize: 40,
                                             color: const Color(0xff47455f),
                                             fontWeight: FontWeight.w900,
                                           ),
@@ -635,13 +633,13 @@ class _HomePageState extends State<HomePage> {
                                           'When will ISS be passing over your head?',
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
-                                            fontSize: 23,
+                                            fontSize: 20,
                                             color: primaryTextColor,
                                             fontWeight: FontWeight.w500,
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
-                                        SizedBox(height: 25),
+                                        SizedBox(height: 20),
                                         Row(
                                           children: <Widget>[
                                             Text(
@@ -673,7 +671,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => PlanetPage())
+                              MaterialPageRoute(builder: (context) => IsroPage())
                           );
                         },
                         child: Stack(
@@ -687,31 +685,31 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   color: Colors.white,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(32.0),
+                                    padding: const EdgeInsets.all(20.0),
                                     child: Column(
                                       crossAxisAlignment:
                                       CrossAxisAlignment.start,
                                       children: <Widget>[
-                                        Text("Your Location",
+                                        Text("Astronauts",
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
-                                            fontSize: 44,
+                                            fontSize: 40,
                                             color: const Color(0xff47455f),
                                             fontWeight: FontWeight.w900,
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
                                         Text(
-                                          'See your location on map',
+                                          'Who are there is space now?',
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
-                                            fontSize: 23,
+                                            fontSize: 20,
                                             color: primaryTextColor,
                                             fontWeight: FontWeight.w500,
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
-                                        SizedBox(height: 25),
+                                        SizedBox(height: 20),
                                         Row(
                                           children: <Widget>[
                                             Text(
@@ -739,54 +737,6 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget photos() {
-    return Scaffold(
-      backgroundColor: gradientEndColor,
-      body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [gradientStartColor, gradientEndColor],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [0.3, 0.7])),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 32.0, bottom: 0, left: 32, right: 32),
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        'Space Photos',
-                        style: TextStyle(
-                          fontFamily: 'Avenir',
-                          fontSize: 44,
-                          color: const Color(0xffffffff),
-                          fontWeight: FontWeight.w900,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      //vertical scrollable grid space pics gallery
                     ],
                   ),
                 ),
