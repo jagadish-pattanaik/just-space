@@ -3,7 +3,9 @@ import 'pages/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(MaterialApp(
+      home: MyApp())
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: HomePage(screenSize: MediaQuery.of(context).size,),
       debugShowCheckedModeBanner: false,
     );
   }
