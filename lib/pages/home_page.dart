@@ -2,9 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:just_space/pages/calculator/calculator_page.dart';
 import 'package:just_space/pages/isro/isro_page.dart';
+import 'package:just_space/pages/iss/track_iss.dart';
 import 'package:just_space/pages/planets/planets_page.dart';
 import 'package:just_space/utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+import 'humansInSpace.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -19,6 +24,31 @@ class _HomePageState extends State<HomePage> {
     initialPage: 0,
     keepPage: true,
   );
+  List<Widget> newsList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    displaynews();
+  }
+
+  void displaynews() async {
+    // https://spaceflightnewsapi.net/
+    var response = await http.get(Uri.parse('https://api.spacexdata.com/v3/history?order=desc'));
+    var jsonData = json.decode(response.body);
+    for (var i in jsonData) {
+      print(i['title']);
+      setState(() {
+        newsList.add(
+          ListTile(
+            title: Text(i['title']),
+            subtitle: Text(i['details']),
+          ),
+        );
+      });
+    }
+    print('Response status: ${response.statusCode}');
+  }
 
   void bottomTapped(int index) {
     setState(() {
@@ -115,50 +145,50 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: gradientEndColor,
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [gradientStartColor, gradientEndColor],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [0.3, 0.7])),
+          gradient: LinearGradient(
+            colors: [gradientStartColor, gradientEndColor],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.3, 0.7]
+          )
+        ),
         child: Stack(
-    children: [
-      Container(
-        // ADD STARS
-      ),
-      SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 32.0, bottom: 0, left: 32, right: 32),
+          children: [
+            Container(
+              // ADD STARS
+            ),
+            SafeArea(
+                child: SingleChildScrollView(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
-                        'Space News',
-                        style: TextStyle(
-                          fontFamily: 'Avenir',
-                          fontSize: 44,
-                          color: const Color(0xffffffff),
-                          fontWeight: FontWeight.w900,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0, bottom: 0, left: 32, right: 32),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              'Space News',
+                              style: TextStyle(
+                                fontFamily: 'Avenir',
+                                fontSize: 44,
+                                color: const Color(0xffffffff),
+                                fontWeight: FontWeight.w900,
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                          ],
                         ),
-                        textAlign: TextAlign.left,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          children: newsList,
+                        ),
                       ),
                     ],
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                    //vertical scrollable news feed
-                    ],
-                  ),
-                ),
-              ],
-            ),
           ),
-    ),
         ]),
       ),
     );
@@ -531,7 +561,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => PlanetPage())
+                              MaterialPageRoute(builder: (context) => TrackIIS())
                           );
                         },
                         child: Stack(
@@ -671,7 +701,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => IsroPage())
+                              MaterialPageRoute(builder: (context) => HumansInSpace())
                           );
                         },
                         child: Stack(
