@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:just_space/model/data.dart';
+import 'package:just_space/model/planet_model.dart';
 import '../../utils/constants.dart';
 
 class DetailPage extends StatelessWidget {

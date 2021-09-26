@@ -1,16 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:just_space/pages/planets/detail_page.dart';
+import 'package:just_space/model/isro_model.dart';
+import 'package:just_space/pages/isro/isro_details.dart';
 import '../../utils/constants.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-import '../../model/planet_model.dart';
-
-class PlanetPage extends StatefulWidget {
+class IsroPage extends StatefulWidget {
   @override
-  _PlanetPageState createState() => _PlanetPageState();
+  _IsroPageState createState() => _IsroPageState();
 }
 
-class _PlanetPageState extends State<PlanetPage> {
+class _IsroPageState extends State<IsroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,16 +24,16 @@ class _PlanetPageState extends State<PlanetPage> {
                 stops: [0.3, 0.7])),
         child: SafeArea(
           child: Stack(
-            children: <Widget>[
-              Column(
+        children: <Widget>[
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(32.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      'Explore',
+                    Text('ISRO',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 44,
@@ -43,7 +43,7 @@ class _PlanetPageState extends State<PlanetPage> {
                       textAlign: TextAlign.left,
                     ),
                     Text(
-                      'Solar System',
+                      'Indian Space Research Organisation',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 24,
@@ -57,14 +57,14 @@ class _PlanetPageState extends State<PlanetPage> {
               ),
               Container(
                 height: 500,
-                padding: const EdgeInsets.only(left: 32),
+                padding: const EdgeInsets.only(left: 20),
                 child: Swiper(
-                  itemCount: planets.length,
+                  itemCount: isroInfo.length,
                   itemWidth: MediaQuery.of(context).size.width - 2 * 64,
                   layout: SwiperLayout.STACK,
                   pagination: SwiperPagination(
                     builder:
-                        DotSwiperPaginationBuilder(activeSize: 20, space: 8),
+                    DotSwiperPaginationBuilder(activeSize: 20, space: 7),
                   ),
                   itemBuilder: (context, index) {
                     return InkWell(
@@ -72,8 +72,8 @@ class _PlanetPageState extends State<PlanetPage> {
                         Navigator.push(
                           context,
                           PageRouteBuilder(
-                            pageBuilder: (context, a, b) => DetailPage(
-                              planetInfo: planets[index],
+                            pageBuilder: (context, a, b) => IsroDetails(
+                              isroInfo: isroInfo[index],
                             ),
                           ),
                         );
@@ -82,7 +82,6 @@ class _PlanetPageState extends State<PlanetPage> {
                         children: <Widget>[
                           Column(
                             children: <Widget>[
-                              SizedBox(height: 100),
                               Card(
                                 elevation: 8,
                                 shape: RoundedRectangleBorder(
@@ -93,27 +92,31 @@ class _PlanetPageState extends State<PlanetPage> {
                                   padding: const EdgeInsets.all(32.0),
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: <Widget>[
-                                      SizedBox(height: 100),
                                       Text(
-                                        planets[index].name,
+                                        isroInfo[index].name,
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 44,
+                                          fontSize: 40,
                                           color: const Color(0xff47455f),
                                           fontWeight: FontWeight.w900,
                                         ),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                       ),
+                                      SizedBox(height: 32),
                                       Text(
-                                        'Solar System',
+                                        isroInfo[index].description,
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 23,
+                                          fontSize: 18,
                                           color: primaryTextColor,
                                           fontWeight: FontWeight.w500,
                                         ),
+                                        maxLines: 4,
+                                        overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                       ),
                                       SizedBox(height: 32),
@@ -141,40 +144,23 @@ class _PlanetPageState extends State<PlanetPage> {
                               ),
                             ],
                           ),
-                          Hero(
-                            tag: planets[index].position,
-                            child: Image.asset(planets[index].iconImage),
-                          ),
-                          Positioned(
-                            right: 24,
-                            bottom: 60,
-                            child: Text(
-                              planets[index].position.toString(),
-                              style: TextStyle(
-                                fontFamily: 'Avenir',
-                                fontSize: 200,
-                                color: primaryTextColor.withOpacity(0.08),
-                                fontWeight: FontWeight.w900,
-                              ),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
                         ],
                       ),
                     );
                   },
                 ),
               ),
+
             ],
-              ),
-              IconButton(
-                icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ]),
-        ),
+          ),
+    IconButton(
+    icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+    onPressed: () {
+    Navigator.pop(context);
+    },
+    ),
+        ]),
+      ),
       ),
     );
   }
