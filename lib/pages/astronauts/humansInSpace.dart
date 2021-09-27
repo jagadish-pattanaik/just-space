@@ -20,7 +20,7 @@ class HumansInSpaceState extends State<HumansInSpace> {
 
   void _getHumansInSpace() async {
     // http://api.open-notify.org/astros.json
-    var response = await http.get(Uri.parse('https://cors-anywhere.herokuapp.com/https://www.howmanypeopleareinspacerightnow.com/peopleinspace.json'));
+    var response = await http.get(Uri.parse('https://crossoriginserver.azurewebsites.net/https://www.howmanypeopleareinspacerightnow.com/peopleinspace.json'));
     var jsonResponse = json.decode(response.body);
     setState(() {
       humansInSpaceList = [];
