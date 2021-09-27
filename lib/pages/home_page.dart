@@ -3,7 +3,8 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:just_space/animation/stars.dart';
-import 'package:just_space/pages/calculator/calculator_page.dart';
+import 'package:just_space/pages/calculator/jump%20calc.dart';
+import 'package:just_space/pages/calculator/weight_calculator.dart';
 import 'package:just_space/pages/isro/isro_page.dart';
 import 'package:just_space/pages/iss/track_iss.dart';
 import 'package:just_space/pages/news/news_details.dart';
@@ -13,6 +14,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'astronauts/humansInSpace.dart';
+import 'calculator/age_calc.dart';
 
 class HomePage extends StatefulWidget {
   final Size screenSize;
@@ -233,6 +235,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         activeIcon: FaIcon(FontAwesomeIcons.userAstronaut),
         label: 'ISS',
       ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.calculate_outlined),
+        activeIcon: Icon(Icons.calculate),
+        label: 'Calculators',
+      ),
     ];
   }
 
@@ -267,6 +274,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   news(),
                   explore(),
                   iss(),
+                  calc(),
                 ],
               )),
         ),
@@ -313,7 +321,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         child: Column(
                           children: <Widget>[
                             Text(
-                              'Space News',
+                              'News',
                               style: TextStyle(
                                 fontFamily: 'Avenir',
                                 fontSize: 44,
@@ -437,77 +445,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ],
                 ),
               ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            PageRouteBuilder(
-                                pageBuilder: (context, a, b) => Calculator(screenSize: screenSize,))
-                        );
-                      },
-                      child: Stack(
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Card(
-                                elevation: 8,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32),
-                                ),
-                                color: Colors.white,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(20.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text("Weight Calculator",
-                                        style: TextStyle(
-                                          fontFamily: 'Avenir',
-                                          fontSize: 40,
-                                          color: const Color(0xff47455f),
-                                          fontWeight: FontWeight.w900,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      Text(
-                                        "What's your weight on other planets?",
-                                        style: TextStyle(
-                                          fontFamily: 'Avenir',
-                                          fontSize: 20,
-                                          color: primaryTextColor,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      SizedBox(height: 20),
-                                      Row(
-                                        children: <Widget>[
-                                          Text(
-                                            'Know more',
-                                            style: TextStyle(
-                                              fontFamily: 'Avenir',
-                                              fontSize: 18,
-                                              color: secondaryTextColor,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            textAlign: TextAlign.left,
-                                          ),
-                                          Icon(
-                                            Icons.arrow_forward,
-                                            color: secondaryTextColor,
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
                     InkWell(
                       onTap: () {
                         Navigator.push(
@@ -905,6 +842,255 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ],
             ),
           ),
+    );
+  }
+
+  Widget calc() {
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 32.0, bottom: 0, left: 32, right: 32),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Calculators',
+                    style: TextStyle(
+                      fontFamily: 'Avenir',
+                      fontSize: 44,
+                      color: const Color(0xffffffff),
+                      fontWeight: FontWeight.w900,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                              pageBuilder: (context, a, b) => Calculator(screenSize: screenSize,))
+                      );
+                    },
+                    child: Stack(
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Card(
+                              elevation: 8,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(32),
+                              ),
+                              color: Colors.white,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text("Weight Calculator",
+                                      style: TextStyle(
+                                        fontFamily: 'Avenir',
+                                        fontSize: 40,
+                                        color: const Color(0xff47455f),
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                    Text(
+                                      "What's your weight on other planets?",
+                                      style: TextStyle(
+                                        fontFamily: 'Avenir',
+                                        fontSize: 20,
+                                        color: primaryTextColor,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                    SizedBox(height: 20),
+                                    Row(
+                                      children: <Widget>[
+                                        Text(
+                                          'Know more',
+                                          style: TextStyle(
+                                            fontFamily: 'Avenir',
+                                            fontSize: 18,
+                                            color: secondaryTextColor,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward,
+                                          color: secondaryTextColor,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                              pageBuilder: (context, a, b) => AgeCalculator(screenSize: screenSize,))
+                      );
+                    },
+                    child: Stack(
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Card(
+                              elevation: 8,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(32),
+                              ),
+                              color: Colors.white,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text("Age Calculator",
+                                      style: TextStyle(
+                                        fontFamily: 'Avenir',
+                                        fontSize: 40,
+                                        color: const Color(0xff47455f),
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                    Text(
+                                      "What's your age on other planets?",
+                                      style: TextStyle(
+                                        fontFamily: 'Avenir',
+                                        fontSize: 20,
+                                        color: primaryTextColor,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                    SizedBox(height: 20),
+                                    Row(
+                                      children: <Widget>[
+                                        Text(
+                                          'Know more',
+                                          style: TextStyle(
+                                            fontFamily: 'Avenir',
+                                            fontSize: 18,
+                                            color: secondaryTextColor,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward,
+                                          color: secondaryTextColor,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                              pageBuilder: (context, a, b) => JumpCalculator(screenSize: screenSize,))
+                      );
+                    },
+                    child: Stack(
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Card(
+                              elevation: 8,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(32),
+                              ),
+                              color: Colors.white,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text("Jump Calculator",
+                                      style: TextStyle(
+                                        fontFamily: 'Avenir',
+                                        fontSize: 40,
+                                        color: const Color(0xff47455f),
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                    Text(
+                                      "How high can you jump on other planets",
+                                      style: TextStyle(
+                                        fontFamily: 'Avenir',
+                                        fontSize: 20,
+                                        color: primaryTextColor,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                    SizedBox(height: 20),
+                                    Row(
+                                      children: <Widget>[
+                                        Text(
+                                          'Know more',
+                                          style: TextStyle(
+                                            fontFamily: 'Avenir',
+                                            fontSize: 18,
+                                            color: secondaryTextColor,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward,
+                                          color: secondaryTextColor,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
