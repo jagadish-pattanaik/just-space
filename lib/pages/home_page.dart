@@ -123,7 +123,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     var response = await http.get(Uri.parse('https://api.spacexdata.com/v3/history?order=desc'));
     var jsonData = json.decode(response.body);
     for (var i in jsonData) {
-      print(i['title']);
       setState(() {
         newsList.add(
           InkWell(
