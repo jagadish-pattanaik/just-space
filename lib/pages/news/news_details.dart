@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:just_space/model/isro_model.dart';
 import '../../utils/constants.dart';
 
 class NewsDetails extends StatelessWidget {

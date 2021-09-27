@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     fadeAnimStar4.addListener(() {
       setState(() {});
     });
-    sizeAnimStar = new Tween(begin: 0.0, end: 7.0)
+    sizeAnimStar = new Tween(begin: 0.0, end: 9.0)
         .animate(new CurvedAnimation(
         parent: animControlStar, curve: new Interval(0.0, 0.5)));
     sizeAnimStar.addListener(() {
@@ -128,7 +128,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NewsDetails(title: i['title'], desc: i['details'],))
+                  PageRouteBuilder(
+                      pageBuilder: (context, a, b) => NewsDetails(title: i['title'], desc: i['details'],))
               );
             },
             child: Stack(
@@ -369,7 +370,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     onTap: () {
               Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PlanetPage())
+                  PageRouteBuilder(
+                      pageBuilder: (context, a, b) => PlanetPage(screenSize: widget.screenSize,))
               );
               },
                 child: Stack(
@@ -439,7 +441,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Calculator())
+                            PageRouteBuilder(
+                                pageBuilder: (context, a, b) => Calculator(screenSize: screenSize,))
                         );
                       },
                       child: Stack(
@@ -509,7 +512,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => IsroPage())
+                            PageRouteBuilder(
+                                pageBuilder: (context, a, b) => IsroPage(screenSize: screenSize,))
                         );
                       },
                       child: Stack(
@@ -579,7 +583,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => IsroPage())
+                            PageRouteBuilder(
+                                pageBuilder: (context, a, b) => IsroPage(screenSize: screenSize,))
                         );
                       },
                       child: Stack(
@@ -685,7 +690,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         onTap: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => TrackIIS())
+                              PageRouteBuilder(
+                                  pageBuilder: (context, a, b) => TrackIIS())
                           );
                         },
                         child: Stack(
@@ -755,7 +761,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         onTap: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => PlanetPage())
+                              PageRouteBuilder(
+                                  pageBuilder: (context, a, b) => PlanetPage(screenSize: screenSize,))
                           );
                         },
                         child: Stack(
@@ -825,7 +832,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         onTap: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => HumansInSpace())
+                              PageRouteBuilder(
+                                  pageBuilder: (context, a, b) => HumansInSpace())
                           );
                         },
                         child: Stack(
@@ -926,7 +934,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   Widget buildGroupStar() {
-    List<Widget> list = new List();
+    List<Widget> list = [];
     for (int i = 0; i < numStars; i++) {
       list.add(
           buildStar(listStar[i].left, listStar[i].top, listStar[i].extraSize, listStar[i].angle, listStar[i].typeFade));
