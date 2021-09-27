@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class HumansInSpace extends StatefulWidget {
-
   @override
   HumansInSpaceState createState() => HumansInSpaceState();
 }
@@ -20,7 +19,7 @@ class HumansInSpaceState extends State<HumansInSpace> {
 
   void _getHumansInSpace() async {
     // http://api.open-notify.org/astros.json
-    var response = await http.get(Uri.parse('https://crossoriginserver.azurewebsites.net/https://www.howmanypeopleareinspacerightnow.com/peopleinspace.json'));
+    var response = await http.get(Uri.parse('https://crossoriginserver.azurewebsites.net/www.howmanypeopleareinspacerightnow.com/peopleinspace.json'));
     var jsonResponse = json.decode(response.body);
     setState(() {
       humansInSpaceList = [];
