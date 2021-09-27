@@ -25,7 +25,7 @@ class TrackIISState extends State<TrackIIS> {
       try {
         placemarks = await placemarkFromCoordinates(
           double.parse(jsonData['iss_position']['latitude']),
-          double.parse(jsonData['iss_position']['latitude']),
+          double.parse(jsonData['iss_position']['longitude']),
         );
         debugPrint(placemarks[0].toString());
         setState(() {});
@@ -40,7 +40,7 @@ class TrackIISState extends State<TrackIIS> {
       try {
         placemarks = await placemarkFromCoordinates(
           double.parse(jsonData['iss_position']['latitude']),
-          double.parse(jsonData['iss_position']['latitude']),
+          double.parse(jsonData['iss_position']['longitude']),
         );
         debugPrint(placemarks[0].toString());
         setState(() {});
