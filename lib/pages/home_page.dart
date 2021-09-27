@@ -9,6 +9,7 @@ import 'package:just_space/pages/isro/isro_page.dart';
 import 'package:just_space/pages/iss/track_iss.dart';
 import 'package:just_space/pages/news/news_details.dart';
 import 'package:just_space/pages/planets/planets_page.dart';
+import 'package:just_space/upcomingLaunches.dart';
 import 'package:just_space/utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
@@ -456,7 +457,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         Navigator.push(
                             context,
                             PageRouteBuilder(
-                                pageBuilder: (context, a, b) => IsroPage(screenSize: screenSize,))
+                                pageBuilder: (context, a, b) => UpcomingLaunches())
                         );
                       },
                       child: Stack(
