@@ -120,87 +120,94 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   void displaynews() async {
     // https://spaceflightnewsapi.net/
-    var response = await http.get(Uri.parse('https://api.spacexdata.com/v3/history?order=desc'));
+    var response = await http.get(
+      Uri.parse('https://api.currentsapi.services/v1/search?keywords=SpaceNews&apiKey=eg8k62JMPxWdUe4NzpML5QBEiy4YpPjykYLWoky0nQKKE7uL')
+    );
     var jsonData = json.decode(response.body);
-    for (var i in jsonData) {
+    for (var i in jsonData['news']) {
+      /* Image -
+        i['image']
+      */
       setState(() {
         newsList.add(
           InkWell(
             onTap: () {
               Navigator.push(
-                  context,
-                  PageRouteBuilder(
-                      pageBuilder: (context, a, b) => NewsDetails(title: i['title'], desc: i['details'],))
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, a, b) => NewsDetails(title: i['title'], desc: i['description'],)
+                )
               );
             },
             child: Stack(
-                children: <Widget>[
-                  Column(
-                      children: <Widget>[
-                        Card(
-            elevation: 8,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(32),
-            ),
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                crossAxisAlignment:
-                CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(i['title'],
-                    style: TextStyle(
-                      fontFamily: 'Avenir',
-                      fontSize: 40,
-                      color: const Color(0xff47455f),
-                      fontWeight: FontWeight.w900,
-                    ),
-                    textAlign: TextAlign.left,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text(i['details'],
-                    style: TextStyle(
-                      fontFamily: 'Avenir',
-                      fontSize: 20,
-                      color: primaryTextColor,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    textAlign: TextAlign.left,
-                    maxLines: 4,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: <Widget>[
-                      Text(
-                        'Know more',
-                        style: TextStyle(
-                          fontFamily: 'Avenir',
-                          fontSize: 18,
-                          color: secondaryTextColor,
-                          fontWeight: FontWeight.w500,
+              children: <Widget>[
+                Column(
+                  children: [
+                    Card(
+                      elevation: 8,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32),
+                      ),
+                      color: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment:
+                          CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(i['title'],
+                              style: TextStyle(
+                                fontFamily: 'Avenir',
+                                fontSize: 40,
+                                color: const Color(0xff47455f),
+                                fontWeight: FontWeight.w900,
+                              ),
+                              textAlign: TextAlign.left,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            Text(i['description'],
+                              style: TextStyle(
+                                fontFamily: 'Avenir',
+                                fontSize: 20,
+                                color: primaryTextColor,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              textAlign: TextAlign.left,
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            SizedBox(height: 20),
+                            Row(
+                              children: <Widget>[
+                                Text(
+                                  'Know more',
+                                  style: TextStyle(
+                                    fontFamily: 'Avenir',
+                                    fontSize: 18,
+                                    color: secondaryTextColor,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  textAlign: TextAlign.left,
+                                ),
+                                Icon(
+                                  Icons.arrow_forward,
+                                  color: secondaryTextColor,
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                        textAlign: TextAlign.left,
                       ),
-                      Icon(
-                        Icons.arrow_forward,
-                        color: secondaryTextColor,
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ]
               ),
-            ),
+            ]
           ),
-        ]),
-        ]),
         ),
         );
       });
     }
-    print('Response status: ${response.statusCode}');
   }
 
   void bottomTapped(int index) {
