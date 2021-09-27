@@ -18,8 +18,8 @@ class TrackIISState extends State<TrackIIS> {
   }
 
   void _getIISLocation() async {
-    // http://api.open-notify.org/astros.json
-    var response = await http.get(Uri.parse('https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json'));
+    // http://api.open-notify.org
+    var response = await http.get(Uri.parse('https://crossoriginserver.azurewebsites.net/http://api.open-notify.org/iss-now.json'));
     var jsonResponse = json.decode(response.body);
     setState(() {
       data = "Longitude - ${jsonResponse['iss_position']['longitude']}\nLatitude - ${jsonResponse['iss_position']['latitude']}";
