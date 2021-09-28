@@ -805,7 +805,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           Navigator.push(
                               context,
                               PageRouteBuilder(
-                                  pageBuilder: (context, a, b) => HumansInSpace())
+                                  pageBuilder: (context, a, b) => HumansInSpace(screenSize: screenSize,))
                           );
                         },
                         child: Stack(

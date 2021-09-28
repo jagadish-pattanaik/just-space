@@ -26,7 +26,7 @@ class NewsDetails extends StatelessWidget {
                         Text(title,
                           style: TextStyle(
                             fontFamily: 'Avenir',
-                            fontSize: 56,
+                            fontSize: 40,
                             color: primaryTextColor,
                             fontWeight: FontWeight.w900,
                           ),
