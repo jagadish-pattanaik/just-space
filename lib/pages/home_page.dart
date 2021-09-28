@@ -6,6 +6,7 @@ import 'package:just_space/animation/stars.dart';
 import 'package:just_space/pages/calculator/jump%20calc.dart';
 import 'package:just_space/pages/calculator/weight_calculator.dart';
 import 'package:just_space/pages/isro/isro_page.dart';
+import 'package:just_space/pages/iss/iss_predic.dart';
 import 'package:just_space/pages/iss/track_iss.dart';
 import 'package:just_space/pages/news/news_details.dart';
 import 'package:just_space/pages/planets/planets_page.dart';
@@ -730,7 +731,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           Navigator.push(
                               context,
                               PageRouteBuilder(
-                                  pageBuilder: (context, a, b) => PlanetPage(screenSize: screenSize,))
+                                  pageBuilder: (context, a, b) => Predic_ISS(screenSize: screenSize,))
                           );
                         },
                         child: Stack(

@@ -181,6 +181,334 @@ class _Predic_ISSState extends State<Predic_ISS>  with TickerProviderStateMixin 
             stops: [0.3, 0.7])),
     child: buildGroupStar(),
     ),
+              SafeArea(
+                child: Stack(
+                children: [
+                  SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32.0, bottom: 0, left: 32, right: 32),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              'ISS Prediction',
+                              style: TextStyle(
+                                fontFamily: 'Avenir',
+                                fontSize: 44,
+                                color: const Color(0xffffffff),
+                                fontWeight: FontWeight.w900,
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10.0),
+                              child: InkWell(
+                                child: Stack(
+                                  children: <Widget>[
+                                    Column(
+                                      children: <Widget>[
+                                        Card(
+                                          elevation: 8,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                          color: Colors.white,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(20.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Text("Mon, Oct 4 at 8:06PM",
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 40,
+                                                    color: const Color(0xff47455f),
+                                                    fontWeight: FontWeight.w900,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(
+                                                  'Visible for: <1 min'
+                                                      '\n'
+                                                      'Max height: 12°'
+                                                      '\n'
+                                                      'Appears: 10° above NNW'
+                                                      '\n'
+                                                      'Disappears: 12° above NNW',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 18,
+                                                    color: primaryTextColor,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10.0),
+                              child: InkWell(
+                                child: Stack(
+                                  children: <Widget>[
+                                    Column(
+                                      children: <Widget>[
+                                        Card(
+                                          elevation: 8,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                          color: Colors.white,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(20.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Text("Tue, Oct 5 at 7:19PM",
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 40,
+                                                    color: const Color(0xff47455f),
+                                                    fontWeight: FontWeight.w900,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(
+                                                  'Visible for: 2 min'
+                                                      '\n'
+                                                      'Max height: 23°'
+                                                      '\n'
+                                                      'Appears: 10° above NNW'
+                                                      '\n'
+                                                      'Disappears: 23° above NNE',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 18,
+                                                    color: primaryTextColor,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10.0),
+                              child: InkWell(
+                                child: Stack(
+                                  children: <Widget>[
+                                    Column(
+                                      children: <Widget>[
+                                        Card(
+                                          elevation: 8,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                          color: Colors.white,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(20.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Text("Wed, Oct 6 at 6:32PM",
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 40,
+                                                    color: const Color(0xff47455f),
+                                                    fontWeight: FontWeight.w900,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(
+                                                  'Visible for: 4 min'
+                                                      '\n'
+                                                      'Max height: 14°'
+                                                      '\n'
+                                                      'Appears: 10° above N'
+                                                      '\n'
+                                                      'Disappears: 11° above ENE',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 18,
+                                                    color: primaryTextColor,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10.0),
+                              child: InkWell(
+                                child: Stack(
+                                  children: <Widget>[
+                                    Column(
+                                      children: <Widget>[
+                                        Card(
+                                          elevation: 8,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                          color: Colors.white,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(20.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Text("Wed, Oct 6 at 8:08PM",
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 40,
+                                                    color: const Color(0xff47455f),
+                                                    fontWeight: FontWeight.w900,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(
+                                                  'Visible for: 1 min'
+                                                      '\n'
+                                                      'Max height: 17°'
+                                                      '\n'
+                                                      'Appears: 10° above WNW'
+                                                      '\n'
+                                                      'Disappears: 17° above WNW',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 18,
+                                                    color: primaryTextColor,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10.0),
+                              child: InkWell(
+                                child: Stack(
+                                  children: <Widget>[
+                                    Column(
+                                      children: <Widget>[
+                                        Card(
+                                          elevation: 8,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                          color: Colors.white,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(20.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Text("Thu, Oct 7 at 7:20PM",
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 40,
+                                                    color: const Color(0xff47455f),
+                                                    fontWeight: FontWeight.w900,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(
+                                                  'Visible for: 4 min'
+                                                      '\n'
+                                                      'Max height: 86°'
+                                                      '\n'
+                                                      'Appears: 10° above NW'
+                                                      '\n'
+                                                      'Disappears: 62° above SE',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Avenir',
+                                                    fontSize: 18,
+                                                    color: primaryTextColor,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                  IconButton(
+                    padding: EdgeInsets.only(left: 10),
+                    icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+              ]),
+              ),
     ]),
     );
   }
