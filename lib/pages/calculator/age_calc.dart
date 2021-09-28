@@ -283,7 +283,7 @@ class _AgeCalculatorState extends State<AgeCalculator> with TickerProviderStateM
                                   padding: const EdgeInsets.only(left: 32),
                                   child: Swiper(
                                     itemCount: planets.length,
-                                    itemWidth: MediaQuery.of(context).size.width - 2 * 64,
+                                    itemWidth: MediaQuery.of(context).size.width - 2 * 68,
                                     layout: SwiperLayout.STACK,
                                     onIndexChanged: (i) {
                                       if (userInput.text != null && userInput.text != '') {
@@ -325,7 +325,7 @@ class _AgeCalculatorState extends State<AgeCalculator> with TickerProviderStateM
                                                       children: <Widget>[
                                                         SizedBox(height: 100),
                                                         Text(
-                                                          planets[index].name,
+                                                          " " + planets[index].name + " ",
                                                           style: TextStyle(
                                                             fontFamily: 'Avenir',
                                                             fontSize: 44,

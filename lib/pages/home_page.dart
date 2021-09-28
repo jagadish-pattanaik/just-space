@@ -3,11 +3,12 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:just_space/animation/stars.dart';
+import 'package:just_space/model/iss_desc.dart';
 import 'package:just_space/pages/calculator/jump%20calc.dart';
 import 'package:just_space/pages/calculator/weight_calculator.dart';
 import 'package:just_space/pages/isro/isro_page.dart';
+import 'package:just_space/pages/iss/iss_desc.dart';
 import 'package:just_space/pages/iss/iss_predic.dart';
-import 'package:just_space/pages/iss/track_iss.dart';
 import 'package:just_space/pages/news/news_details.dart';
 import 'package:just_space/pages/planets/planets_page.dart';
 import 'package:just_space/pages/launches/upcomingLaunches.dart';
@@ -582,7 +583,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                         height: 5,
                                       ),
                                       Text(
-                                        'Know about ISRO',
+                                        'Know about the Indian Space Research Organisation',
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
                                           fontSize: 18,
@@ -662,7 +663,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           Navigator.push(
                               context,
                               PageRouteBuilder(
-                                  pageBuilder: (context, a, b) => TrackIIS())
+                                  pageBuilder: (context, a, b) => IssDetails())
                           );
                         },
                         child: Stack(
@@ -681,7 +682,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       crossAxisAlignment:
                                       CrossAxisAlignment.start,
                                       children: <Widget>[
-                                        Text("Track ISS",
+                                        Text("ISS",
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
                                             fontSize: 40,
@@ -694,7 +695,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           height: 5,
                                         ),
                                         Text(
-                                          'Live track the Internation Space Station',
+                                          'Know about the International Space Station',
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
                                             fontSize: 18,
