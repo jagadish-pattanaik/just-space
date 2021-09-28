@@ -50,6 +50,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     displaynews();
 
     screenSize = widget.screenSize;
+    newsList.add(
+      Padding(
+        padding: EdgeInsets.only(top: widget.screenSize.width / 2),
+        child: Center(
+          child: CircularProgressIndicator(
+            color: CupertinoColors.activeGreen,
+          ),
+        ),
+      ),
+    );
+    setState(() {});
 
     listStar = [];
     numStars = 30;
@@ -126,10 +137,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       Uri.parse('https://api.currentsapi.services/v1/search?keywords=SpaceNews&apiKey=eg8k62JMPxWdUe4NzpML5QBEiy4YpPjykYLWoky0nQKKE7uL')
     );
     var jsonData = json.decode(response.body);
+    newsList.clear();
     for (var i in jsonData['news']) {
-      /* Image -
-        i['image']
-      */
       setState(() {
         newsList.add(
             Padding(
