@@ -63,7 +63,7 @@ class TrackIISState extends State<TrackIIS> {
               ),
             );
           } else {
-            print(snapshot.data);
+            //print(snapshot.data);
             return Center(
               child: Text(data, style: TextStyle(color: Colors.black),),
             );

@@ -201,7 +201,19 @@ class UpcomingLaunchesState extends State<UpcomingLaunches> with TickerProviderS
                 Navigator.push(
                     context,
                     PageRouteBuilder(
-                        pageBuilder: (context, a, b) => LaunchDetails(title: launch['name'], desc: launch['status']['description'],)
+                        pageBuilder: (context, a, b) => LaunchDetails(title: launch['name'], desc: "${launch['status']['description']} ${launch['mission']['description']}"
+                            "\n"
+                            "\n"
+                            "Rocket family: ${launch['rocket']['configuration']['family']}"
+                            "\n"
+                            "\n"
+                            "Launch Service Provider: ${launch['launch_service_provider']['name']}"
+                            "\n"
+                            "\n"
+                            "Type: ${launch['launch_service_provider']['type']}"
+                            "\n"
+                            "\n"
+                            "Launch location: ${launch['pad']['name']}, ${launch['pad']['location']['name']}")
                     )
                 );
               },
