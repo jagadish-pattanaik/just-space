@@ -120,6 +120,7 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             IconButton(
+              padding: EdgeInsets.only(left: 10),
               icon: Icon(Icons.arrow_back_ios),
               onPressed: () {
                 Navigator.pop(context);

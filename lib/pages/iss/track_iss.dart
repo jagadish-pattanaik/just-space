@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:geocoding/geocoding.dart';
@@ -27,7 +28,7 @@ class TrackIISState extends State<TrackIIS> {
           double.parse(jsonData['iss_position']['latitude']),
           double.parse(jsonData['iss_position']['longitude']),
         );
-        debugPrint(placemarks[0].toString());
+        data = placemarks[0].toString();
         setState(() {});
       } catch (error) {
         return {'error': error.toString()};
@@ -42,7 +43,7 @@ class TrackIISState extends State<TrackIIS> {
           double.parse(jsonData['iss_position']['latitude']),
           double.parse(jsonData['iss_position']['longitude']),
         );
-        debugPrint(placemarks[0].toString());
+        data = placemarks[0].toString();
         setState(() {});
       } catch (error) {
         return {'error': error.toString()};
@@ -62,8 +63,9 @@ class TrackIISState extends State<TrackIIS> {
               ),
             );
           } else {
+            print(snapshot.data);
             return Center(
-              child: Text(data),
+              child: Text(data, style: TextStyle(color: Colors.black),),
             );
           }
         });

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../utils/constants.dart';
 
-class NewsDetails extends StatelessWidget {
+class LaunchDetails extends StatelessWidget {
   final title;
   final desc;
-  //final image;
 
-  const NewsDetails({Key key, this.title, this.desc}) : super(key: key);
+  const LaunchDetails({Key key, this.title, this.desc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

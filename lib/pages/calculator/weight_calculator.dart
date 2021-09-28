@@ -316,7 +316,7 @@ class _CalculatorState extends State<Calculator> with TickerProviderStateMixin {
                                           Card(
                                             elevation: 8,
                                             shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(32),
+                                              borderRadius: BorderRadius.circular(12),
                                             ),
                                             color: Colors.white,
                                             child: Padding(
@@ -357,6 +357,7 @@ class _CalculatorState extends State<Calculator> with TickerProviderStateMixin {
                   ],
                 ),
                 IconButton(
+                  padding: EdgeInsets.only(left: 10),
                   icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
                   onPressed: () {
                     Navigator.pop(context);

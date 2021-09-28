@@ -9,7 +9,7 @@ import 'package:just_space/pages/isro/isro_page.dart';
 import 'package:just_space/pages/iss/track_iss.dart';
 import 'package:just_space/pages/news/news_details.dart';
 import 'package:just_space/pages/planets/planets_page.dart';
-import 'package:just_space/upcomingLaunches.dart';
+import 'package:just_space/pages/launches/upcomingLaunches.dart';
 import 'package:just_space/utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
@@ -131,7 +131,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       */
       setState(() {
         newsList.add(
-          InkWell(
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: InkWell(
             onTap: () {
               Navigator.push(
                 context,
@@ -147,7 +149,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     Card(
                       elevation: 8,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       color: Colors.white,
                       child: Padding(
@@ -159,7 +161,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             Text(i['title'],
                               style: TextStyle(
                                 fontFamily: 'Avenir',
-                                fontSize: 40,
+                                fontSize: 30,
                                 color: const Color(0xff47455f),
                                 fontWeight: FontWeight.w900,
                               ),
@@ -167,18 +169,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                             ),
+                            SizedBox(
+                              height: 15,
+                            ),
                             Text(i['description'],
                               style: TextStyle(
                                 fontFamily: 'Avenir',
-                                fontSize: 20,
+                                fontSize: 18,
                                 color: primaryTextColor,
                                 fontWeight: FontWeight.w500,
                               ),
                               textAlign: TextAlign.left,
-                              maxLines: 4,
+                              maxLines: 3,
                               overflow: TextOverflow.ellipsis,
                             ),
-                            SizedBox(height: 20),
+                            SizedBox(height: 15),
                             Row(
                               children: <Widget>[
                                 Text(
@@ -206,6 +211,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ]
           ),
         ),
+            ),
         );
       });
     }
@@ -291,7 +297,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(36.0),
           ),
-          color: navigationColor,
+          color: Color(0xFF2e2e2e),
         ),
         padding: const EdgeInsets.all(5),
         child: BottomNavigationBar(
@@ -313,12 +319,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   Widget news() {
-    return Stack(
-          children: [
-            Container(
-              // ADD STARS
-            ),
-            SafeArea(
+    return SafeArea(
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -349,8 +350,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     ],
                   ),
                 ),
-          ),
-        ]
     );
   }
 
@@ -381,7 +380,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    InkWell(
+                Padding(
+                padding: const EdgeInsets.only(bottom: 10.0),
+                child: InkWell(
                     onTap: () {
               Navigator.push(
               context,
@@ -396,7 +397,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         Card(
                           elevation: 8,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(32),
+                            borderRadius: BorderRadius.circular(12),
                           ),
                           color: Colors.white,
                           child: Padding(
@@ -414,17 +415,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   ),
                                   textAlign: TextAlign.left,
                                 ),
+                                SizedBox(
+                                  height: 5,
+                                ),
                                 Text(
                                   'All planets in our solar system',
                                   style: TextStyle(
                                     fontFamily: 'Avenir',
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: primaryTextColor,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   textAlign: TextAlign.left,
                                 ),
-                                SizedBox(height: 20),
+                                SizedBox(height: 15),
                                 Row(
                                   children: <Widget>[
                                     Text(
@@ -452,12 +456,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ],
                 ),
               ),
+                ),
+      Padding(
+        padding: const EdgeInsets.only(bottom: 10.0),
+        child:
                     InkWell(
                       onTap: () {
                         Navigator.push(
                             context,
                             PageRouteBuilder(
-                                pageBuilder: (context, a, b) => UpcomingLaunches())
+                                pageBuilder: (context, a, b) => UpcomingLaunches(screenSize: screenSize,))
                         );
                       },
                       child: Stack(
@@ -467,7 +475,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               Card(
                                 elevation: 8,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32),
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                                 color: Colors.white,
                                 child: Padding(
@@ -479,23 +487,26 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       Text("Upcoming Launches",
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 40,
+                                          fontSize: 37,
                                           color: const Color(0xff47455f),
                                           fontWeight: FontWeight.w900,
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
                                       Text(
                                         'When next rocket is getting launched?',
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           color: primaryTextColor,
                                           fontWeight: FontWeight.w500,
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 15),
                                       Row(
                                         children: <Widget>[
                                           Text(
@@ -523,6 +534,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ],
                       ),
                     ),
+    ),
                     InkWell(
                       onTap: () {
                         Navigator.push(
@@ -538,7 +550,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               Card(
                                 elevation: 8,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32),
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                                 color: Colors.white,
                                 child: Padding(
@@ -556,17 +568,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
                                       Text(
                                         'Know about ISRO',
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           color: primaryTextColor,
                                           fontWeight: FontWeight.w500,
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 15),
                                       Row(
                                         children: <Widget>[
                                           Text(
@@ -630,7 +645,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      InkWell(
+                  Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: InkWell(
                         onTap: () {
                           Navigator.push(
                               context,
@@ -645,7 +662,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 Card(
                                   elevation: 8,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(32),
+                                    borderRadius: BorderRadius.circular(12),
                                   ),
                                   color: Colors.white,
                                   child: Padding(
@@ -663,17 +680,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
                                         Text(
                                           'Live track the Internation Space Station',
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
-                                            fontSize: 23,
+                                            fontSize: 18,
                                             color: primaryTextColor,
                                             fontWeight: FontWeight.w500,
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
-                                        SizedBox(height: 20),
+                                        SizedBox(height: 15),
                                         Row(
                                           children: <Widget>[
                                             Text(
@@ -701,6 +721,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ],
                         ),
                       ),
+                  ),
+      Padding(
+        padding: const EdgeInsets.only(bottom: 10.0),
+        child:
                       InkWell(
                         onTap: () {
                           Navigator.push(
@@ -716,7 +740,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 Card(
                                   elevation: 8,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(32),
+                                    borderRadius: BorderRadius.circular(12),
                                   ),
                                   color: Colors.white,
                                   child: Padding(
@@ -734,17 +758,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
                                         Text(
                                           'When will ISS be passing over your head?',
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
-                                            fontSize: 20,
+                                            fontSize: 18,
                                             color: primaryTextColor,
                                             fontWeight: FontWeight.w500,
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
-                                        SizedBox(height: 20),
+                                        SizedBox(height: 15),
                                         Row(
                                           children: <Widget>[
                                             Text(
@@ -772,6 +799,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ],
                         ),
                       ),
+      ),
                       InkWell(
                         onTap: () {
                           Navigator.push(
@@ -787,7 +815,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 Card(
                                   elevation: 8,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(32),
+                                    borderRadius: BorderRadius.circular(12),
                                   ),
                                   color: Colors.white,
                                   child: Padding(
@@ -805,17 +833,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
                                         Text(
                                           'Who are there is space now?',
                                           style: TextStyle(
                                             fontFamily: 'Avenir',
-                                            fontSize: 20,
+                                            fontSize: 18,
                                             color: primaryTextColor,
                                             fontWeight: FontWeight.w500,
                                           ),
                                           textAlign: TextAlign.left,
                                         ),
-                                        SizedBox(height: 20),
+                                        SizedBox(height: 15),
                                         Row(
                                           children: <Widget>[
                                             Text(
@@ -879,7 +910,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  InkWell(
+              Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: InkWell(
                     onTap: () {
                       Navigator.push(
                           context,
@@ -894,7 +927,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             Card(
                               elevation: 8,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(32),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               color: Colors.white,
                               child: Padding(
@@ -912,17 +945,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       ),
                                       textAlign: TextAlign.left,
                                     ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
                                     Text(
                                       "What's your weight on other planets?",
                                       style: TextStyle(
                                         fontFamily: 'Avenir',
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         color: primaryTextColor,
                                         fontWeight: FontWeight.w500,
                                       ),
                                       textAlign: TextAlign.left,
                                     ),
-                                    SizedBox(height: 20),
+                                    SizedBox(height: 15),
                                     Row(
                                       children: <Widget>[
                                         Text(
@@ -950,6 +986,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       ],
                     ),
                   ),
+              ),
+      Padding(
+        padding: const EdgeInsets.only(bottom: 10.0),
+        child:
                   InkWell(
                     onTap: () {
                       Navigator.push(
@@ -965,7 +1005,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             Card(
                               elevation: 8,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(32),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               color: Colors.white,
                               child: Padding(
@@ -983,17 +1023,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       ),
                                       textAlign: TextAlign.left,
                                     ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
                                     Text(
                                       "What's your age on other planets?",
                                       style: TextStyle(
                                         fontFamily: 'Avenir',
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         color: primaryTextColor,
                                         fontWeight: FontWeight.w500,
                                       ),
                                       textAlign: TextAlign.left,
                                     ),
-                                    SizedBox(height: 20),
+                                    SizedBox(height: 16),
                                     Row(
                                       children: <Widget>[
                                         Text(
@@ -1021,6 +1064,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       ],
                     ),
                   ),
+      ),
                   InkWell(
                     onTap: () {
                       Navigator.push(
@@ -1036,7 +1080,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             Card(
                               elevation: 8,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(32),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               color: Colors.white,
                               child: Padding(
@@ -1054,17 +1098,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       ),
                                       textAlign: TextAlign.left,
                                     ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
                                     Text(
                                       "How high can you jump on other planets",
                                       style: TextStyle(
                                         fontFamily: 'Avenir',
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         color: primaryTextColor,
                                         fontWeight: FontWeight.w500,
                                       ),
                                       textAlign: TextAlign.left,
                                     ),
-                                    SizedBox(height: 20),
+                                    SizedBox(height: 15),
                                     Row(
                                       children: <Widget>[
                                         Text(
