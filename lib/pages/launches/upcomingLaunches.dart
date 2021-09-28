@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:just_space/animation/stars.dart';
@@ -30,6 +31,17 @@ class UpcomingLaunchesState extends State<UpcomingLaunches> with TickerProviderS
   @override
   void initState() {
     super.initState();
+    upcomingLaunches.add(
+      Padding(
+        padding: EdgeInsets.only(top: widget.screenSize.width / 2),
+        child: Center(
+          child: CircularProgressIndicator(
+            color: CupertinoColors.activeGreen,
+          ),
+        ),
+      ),
+    );
+    setState(() {});
     _getUpcomingLaunches();
 
     screenSize = widget.screenSize;
@@ -179,7 +191,7 @@ class UpcomingLaunchesState extends State<UpcomingLaunches> with TickerProviderS
       jsonData = json.decode((await http.get(Uri.parse('https://ll.thespacedevs.com/2.1.0/launch/upcoming?format=json'))).body);
     }
     setState(() {
-      upcomingLaunches = [];
+      upcomingLaunches.clear();
       for (var launch in jsonData['results']) {
         upcomingLaunches.add(
           Padding(

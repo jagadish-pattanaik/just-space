@@ -193,7 +193,7 @@ class HumansInSpaceState extends State<HumansInSpace> with TickerProviderStateMi
       jsonData = json.decode((await http.get(Uri.parse('https://www.howmanypeopleareinspacerightnow.com/peopleinspace.json'))).body);
     }
     setState(() {
-      humansInSpaceList = [];
+      humansInSpaceList.clear();
       for (var human in jsonData['people']) {
         humansInSpaceList.add(
           Padding(
