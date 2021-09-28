@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:just_space/animation/stars.dart';
@@ -31,6 +32,17 @@ class HumansInSpaceState extends State<HumansInSpace> with TickerProviderStateMi
   @override
   void initState() {
     super.initState();
+    humansInSpaceList.add(
+      Padding(
+        padding: EdgeInsets.only(top: widget.screenSize.width / 2),
+        child: Center(
+          child: CircularProgressIndicator(
+            color: CupertinoColors.activeGreen,
+          ),
+        ),
+      ),
+    );
+    setState(() {});
     _getHumansInSpace();
 
     screenSize = widget.screenSize;
