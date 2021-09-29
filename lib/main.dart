@@ -3,14 +3,17 @@ import 'pages/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MaterialApp(
+  runApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyApp())
+      home: MyApp(),
+    ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
+  // This widget is the root of the application
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
