@@ -1,4 +1,11 @@
 # <p align="center"> Just Space </p>
+Just Space will help in raising awareness and sowing the seeds of curiosity in people. The app
+has a beautiful UI, interesting information and facts, and engaging fun features. The app has daily space
+news, information and photos of all planets of the solar system, upcoming rocket launch details,
+information about International Space Station, ISS overhead pass prediction, astronauts in space now,
+information about ISRO, its history, future projects, launch vehicles, satellites, etc and weight, age and
+jump height calculators on other planets.
+
 ## Contributing
   /Lib<br>
    - model (for data structures and models)<br>
