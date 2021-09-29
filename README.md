@@ -1,4 +1,19 @@
 # <p align="center"> Just Space </p>
+
+<div align="center">
+<img src="https://img.shields.io/github/forks/jagadish-pattanaik/just-space"/>
+<img src="https://img.shields.io/github/stars/jagadish-pattanaik/just-space"/>
+<a href="https://github.com/jagadish-pattanaik/just-space/issues"><img src="https://img.shields.io/github/issues/jagadish-pattanaik/just-space"/></a>
+<a href="https://github.com/jagadish-pattanaik/just-space/pulls"><img src="https://img.shields.io/github/issues-pr/jagadish-pattanaik/just-space"/></a>
+<a href="https://github.com/jagadish-pattanaik/just-spacec/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/jagadish-pattanaik/just-space"/></a>
+<a href="https://github.com/jagadish-pattanaik/just-space/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/github/contributors/jagadish-pattanaik/just-space"/></a>
+<img src="https://img.shields.io/github/sponsors/jagadish-pattanaik"/>
+<img src="https://img.shields.io/github/languages/count/jagadish-pattanaik/just-space"/>
+<img src="https://img.shields.io/github/languages/top/jagadish-pattanaik/just-space"/>
+<img src="https://img.shields.io/tokei/lines/github/jagadish-pattanaik/just-space"/>
+<img src="https://img.shields.io/github/repo-size/jagadish-pattanaik/just-space"/>
+</div>
+
 Just Space will help in raising awareness and sowing the seeds of curiosity in people. The app
 has a beautiful UI, interesting information and facts, and engaging fun features. The app has daily space
 news, information and photos of all planets of the solar system, upcoming rocket launch details,
@@ -6,13 +21,56 @@ information about International Space Station, ISS overhead pass prediction, ast
 information about ISRO, its history, future projects, launch vehicles, satellites, etc and weight, age and
 jump height calculators on other planets.
 
-## Contributing
-  /Lib<br>
-   - model (for data structures and models)<br>
-   - pages (for different pages of app)<br>
-       - 1 folder for each page (this folder contains all files related to that page including its features)<br>
-   - utils (for APIs, helpers, constants etc)<br>
+---
 
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#features">Features</a>
+    </li>
+    <li>
+      <a href="#download">Dowload</a>
+    </li>
+    <li><a href="#release-notes">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#connect-with-me">Connect With Me</a></li>
+    <li><a href="#join-my-community">Join My Community</a></li>
+    <li><a href="#support-me">Support Me</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#privacy-policy">Privacy Policy</a></li>
+    <li><a href="#terms--conditions">Terms & Conditions</a></li>
+    <li><a href="#acknowledgement">Acknowledgements</a></li>
+    <li><a href="#contributors">Contributiors</a></li>
+  </ol>
+</details>
+
+## Features
+Check out our [Wiki](https://github.com/jagadish-pattanaik/just-space/wiki#features)
+
+## Download
+
+| Latest stable release | [![release](https://img.shields.io/badge/release-latest-green.svg)](https://github.com/jagadish-pattanaik/just-space/releases/latest) |
+|---|---|
+
+<!-- | Android | Website | WebApp |
+|:-:|:-:|:-:|
+| [<img src="https://www.vectorlogo.zone/logos/google_play/google_play-icon.svg" height="50">](https://play.google.com/store/apps/details?id=com.jaguweb.jagu_meet) | [<img src="https://www.freepnglogos.com/uploads/logo-website-png/logo-website-website-logo-png-transparent-background-background-15.png" height="50">](https://jmeet-8e163.web.app/) | [<img src="https://play-lh.googleusercontent.com/VFVihIkFupMor-du4jnGdO8BNJbUNm7FW7GojWo6_xo-Nw-byLYdWWQofqemg5cf8Yg=s180-rw" height="50">](https://jmeet-8e163.web.app/) | -->
+  
+## Release notes
+Check out our [Wiki](https://github.com/jagadish-pattanaik/just-meet-public/wiki/Release-notes)
+
+## Contributing
+If you are looking to contribute to Just Meet, first of all, thank you! Please
+see our [guidelines for contributing](./CONTRIBUTING.md)
+
+## Changelog
+[Version wise changelog](./CHANGELOG.md)
+
+## Security
+For information on reporting security vulnerabilities in Just Meet, see [SECURITY.md](./SECURITY.md)
+  
 ## Connect with me
   <a href="https://github.com/jagadish-pattanaik">
     <img src="https://img.shields.io/github/followers/jagadish-pattanaik?label=Follow&style=social" />
@@ -62,8 +120,22 @@ jump height calculators on other planets.
     <img width="30px" height="30" src="https://www.vectorlogo.zone/logos/patreon/patreon-icon.svg" />
   </a>&ensp;
   
+## License
+Licensed under the [GNU Affero General Public License v3.0](https://github.com/jagadish-pattanaik/just-space/blob/master/LICENSE.md)
+  
+## Privacy policy
+
+The privacy policy section here was starting to feel a bit too succinct for the complexity of the topic, so we created a post that covers the topic much more broadly on our [Privacy policy Wiki page](https://github.com/jagadish-pattanaik/just-space/wiki/Privacy-policy)
+
+## Terms & Conditions
+
+The privacy policy section here was starting to feel a bit too succinct for the complexity of the topic, so we created a post that covers the topic much more broadly on our [Terms & Conditions Wiki page](https://github.com/jagadish-pattanaik/just-space/wiki/Terms-&-Conditions)
+
 ## Acknowledgement
 Copyright 2021 Jagadish Prasad Pattanaik. All rights reserved.
+
+## Contributors
+- [Akash Pattnaik](https://github.com/BLUE-DEVIL1134)
   
 <br>
 </br>
