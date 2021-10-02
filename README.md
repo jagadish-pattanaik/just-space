@@ -29,12 +29,7 @@ jump height calculators on other planets.
     <li>
       <a href="#features">Features</a>
     </li>
-    <li>
-      <a href="#download">Dowload</a>
-    </li>
-    <li><a href="#release-notes">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#security">Security</a></li>
     <li><a href="#connect-with-me">Connect With Me</a></li>
     <li><a href="#join-my-community">Join My Community</a></li>
     <li><a href="#support-me">Support Me</a></li>
@@ -46,30 +41,12 @@ jump height calculators on other planets.
   </ol>
 </details>
 
-## Features
-Check out our [Wiki](https://github.com/jagadish-pattanaik/just-space/wiki#features)
-
-## Download
-
-| Latest stable release | [![release](https://img.shields.io/badge/release-latest-green.svg)](https://github.com/jagadish-pattanaik/just-space/releases/latest) |
-|---|---|
-
-<!-- | Android | Website | WebApp |
-|:-:|:-:|:-:|
-| [<img src="https://www.vectorlogo.zone/logos/google_play/google_play-icon.svg" height="50">](https://play.google.com/store/apps/details?id=com.jaguweb.jagu_meet) | [<img src="https://www.freepnglogos.com/uploads/logo-website-png/logo-website-website-logo-png-transparent-background-background-15.png" height="50">](https://jmeet-8e163.web.app/) | [<img src="https://play-lh.googleusercontent.com/VFVihIkFupMor-du4jnGdO8BNJbUNm7FW7GojWo6_xo-Nw-byLYdWWQofqemg5cf8Yg=s180-rw" height="50">](https://jmeet-8e163.web.app/) | -->
-  
-## Release notes
-Check out our [Wiki](https://github.com/jagadish-pattanaik/just-meet-public/wiki/Release-notes)
-
 ## Contributing
 If you are looking to contribute to Just Meet, first of all, thank you! Please
 see our [guidelines for contributing](./CONTRIBUTING.md)
 
 ## Changelog
 [Version wise changelog](./CHANGELOG.md)
-
-## Security
-For information on reporting security vulnerabilities in Just Meet, see [SECURITY.md](./SECURITY.md)
   
 ## Connect with me
   <a href="https://github.com/jagadish-pattanaik">
