@@ -7,10 +7,11 @@ class Star {
   double angle;
   int typeFade;
 
-  Star(
-      {@required this.left,
-        @required this.top,
-        @required this.extraSize,
-        @required this.angle,
-        @required this.typeFade});
+  Star({
+    @required this.left,
+    @required this.top,
+    @required this.extraSize,
+    @required this.angle,
+    @required this.typeFade,
+  });
 }
