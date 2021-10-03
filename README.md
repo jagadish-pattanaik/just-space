@@ -30,6 +30,8 @@ jump height calculators on other planets.
       <a href="#features">Features</a>
     </li>
     <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#changelog">Changelog</a></li>
+    <li><a href="#security">Security</a></li>
     <li><a href="#connect-with-me">Connect With Me</a></li>
     <li><a href="#join-my-community">Join My Community</a></li>
     <li><a href="#support-me">Support Me</a></li>
@@ -47,6 +49,9 @@ see our [guidelines for contributing](./CONTRIBUTING.md)
 
 ## Changelog
 [Version wise changelog](./CHANGELOG.md)
+
+## Security
+For information on reporting security vulnerabilities in Just Meet, see [SECURITY.md](./SECURITY.md)
   
 ## Connect with me
   <a href="https://github.com/jagadish-pattanaik">
