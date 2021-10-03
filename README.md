@@ -14,21 +14,16 @@
 <img src="https://img.shields.io/github/repo-size/jagadish-pattanaik/just-space"/>
 </div>
 
-Just Space will help in raising awareness and sowing the seeds of curiosity in people. The app
-has a beautiful UI, interesting information and facts, and engaging fun features. The app has daily space
-news, information and photos of all planets of the solar system, upcoming rocket launch details,
-information about International Space Station, ISS overhead pass prediction, astronauts in space now,
-information about ISRO, its history, future projects, launch vehicles, satellites, etc and weight, age and
-jump height calculators on other planets.
-
----
+People are not aware about space and the outer world. They have lack of knowledge regarding space
+and planetary systems. People think space is a boring and difficult thing to understand. There are lot of
+interesting things which when they will know, they will fall in love with space. Just Space will help in raising awareness and sowing the seeds of curiosity in people. The app
+has a beautiful UI, interesting information and facts, and engaging fun features.
 
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#features">Features</a>
-    </li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#features">Features</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#changelog">Changelog</a></li>
     <li><a href="#security">Security</a></li>
@@ -42,6 +37,27 @@ jump height calculators on other planets.
     <li><a href="#contributors">Contributiors</a></li>
   </ol>
 </details>
+
+## Features
+- daily space news
+- information and photos of all planets of the solar system
+- upcoming rocket launch details 
+- information about International Space Station
+- ISS overhead pass prediction
+- astronauts in space now
+- information about ISRO its history, future projects, launch vehicles, satellites, etc
+- weight, age and jump height calculators on other planets
+
+
+## Technologies/Tools used:
+- Flutter
+- Android Studio
+- GitHub
+- Dart programming language
+- Different APIs
+  - Howmanypeopleareinspacerightnow
+  - Thespacedevs
+  - Currentsapi
 
 ## Contributing
 If you are looking to contribute to Just Meet, first of all, thank you! Please
