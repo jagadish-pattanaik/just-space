@@ -19,6 +19,12 @@ and planetary systems. People think space is a boring and difficult thing to und
 interesting things which when they will know, they will fall in love with space. Just Space will help in raising awareness and sowing the seeds of curiosity in people. The app
 has a beautiful UI, interesting information and facts, and engaging fun features.
 
+<a href="https://www.youtube.com/watch?v=hiSFQAdRX9c">
+    <img width="30" src="https://www.vectorlogo.zone/logos/youtube/youtube-icon.svg" />
+  </a>
+  
+[Youtube video](https://www.youtube.com/watch?v=hiSFQAdRX9c)
+
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
